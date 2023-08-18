@@ -5,9 +5,16 @@
 }
 
 .background {
-    background-color: #121818;
+    background-color: #12181B;
     height: 100vh;
     padding-top: 1px;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 10%;
 }
 
 .display {
@@ -16,13 +23,6 @@
     text-align: center;
     margin-top: 1em;
     margin-bottom: 1em;
-}
-
-.title {
-    color: white;
-    text-align: center;
-    font-size: 40px;
-    margin-top: 10%;
 }
 
 .hide {

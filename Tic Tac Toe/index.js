@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
     const tiles = Array.from(document.querySelectorAll('.tile'));
-    const playerDisplay = document.querySelector('.display.player');
+    const playerDisplay = document.querySelector('.display-player');
     const resetButton = document.querySelector('#reset');
     const announcer = document.querySelector('.announcer');
 
@@ -52,7 +52,7 @@ window.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        if (board.includes(''))
+        if (!board.includes(''))
         announce(TIE);
     }
 
@@ -82,16 +82,16 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     const changePlayer = () => {
-        playerDisplay.classList.remove('player&{currentPlayer}');
+        playerDisplay.classList.remove(`player${currentPlayer}`);
         currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
         playerDisplay.innerText = currentPlayer;
-        playerDisplay.classList.add('player${currentPlayer}');
+        playerDisplay.classList.add(`player${currentPlayer}`);
     }
 
     const userAction = (tile, index) => {
         if(isValidAction(tile) && isGameActive) {
             tile.innerText = currentPlayer;
-            tile.classList.add('player${currentPlayer}');
+            tile.classList.add(`player${currentPlayer}`);
             updateBoard(index);
             handleResultValidation();
             changePlayer();
@@ -114,7 +114,7 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    tiles.forEach((tile, index) => {
+    tiles.forEach( (tile, index) => {
         tile.addEventListener('click', () => userAction(tile, index));
     });
 
